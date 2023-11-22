@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fish Academy</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="standard_style.css">
+        
+          <style>
+            .login-container {
+              width: 300px;
+              margin: 0 auto;
+              text-align: center;
+              padding: 20px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              background-color:#ff3366;
+            }
+            .login-button {
+              margin-top: 10px;
+              margin-right: 10px;
+              background-color: black;
+              color:white;
+              font-family: cursive;
+            }
+          </style>
+  
+    </head>
+     <!--body style = "background-color:black; text:orange; font-family:fantasy;"> -->
+     <body style="background-color: black">
+         
+           <div>
+            <h2 style="color:white; text-align:center;">Login</h2>
+            
+            <form onsubmit="return validateForm()" class="login-container">
+                
+                <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br><br>
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" ><br><br>
+              <input type="submit" value="Submit" class="login-button">
+              <!-- <a href="FishCourseMenu.html"><button style="background-color:black; color:white;">Login</button></a><br> -->
+            </form>
+            
+        <script>
+            function validateForm() {
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+
+                // Check username length
+                if (isNan(username) || isNan(password)) {
+                    alert("Cannot leave field empty");
+                    return false;
+                }
+                if (username.length <= 5) {
+                    alert("Username must be longer than 5 characters.");
+                    return false;
+                }
+
+                // Check password length
+                if (password.length < 12 || password.length > 18) {
+                    alert("Password must be between 12 and 18 characters.");
+                    return false;
+                }
+
+                // If both checks pass, redirect to MainMenu.html
+                window.location.href = 'FishCourseMenu.html';
+                return true;
+                
+        </script>
+        
+          </div>
+         
+         
+
+        
+    </body>
+    
+</html>
